@@ -1,11 +1,4 @@
-.App {
-  background-color: #282c34;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -33,6 +26,15 @@ a{
 
 .App-link {
   color: #61dafb;
+}
+
+/*
+* navbar actions
+*/
+.navbar__actions{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;  
 }
 
 @keyframes App-logo-spin {

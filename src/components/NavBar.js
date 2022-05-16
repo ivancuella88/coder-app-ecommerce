@@ -1,10 +1,9 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import PersonIcon from '@mui/icons-material/Person';
+import CartWidget from './CartWidget/CartWidget';
 
 const NavBar = () => {
 
@@ -19,25 +18,16 @@ const NavBar = () => {
     return (
         <AppBar position="static">
             <Toolbar>
-                <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                >
-                    <MenuIcon />
-                </IconButton>
                 <div className="navbar" style={ styles }>
                     <div className="navbar__logo" style={ {
                             display: 'flex',
                             justifyContent : 'space-between',
                             alignItems: 'center'
                         }} >
-                        <img src='./images/musicommerce-logo.png' className="navbar__logo-img" alt="logo" width={60} height={'auto'}/>
-                        <h1 style={ { fontSize : '1.5rem', margin : 0 } }>Musicommerce</h1>
+                        <img src='./images/musicommerce-logo.png' className="navbar__logo-img" alt="logo" width={40} height={'auto'}/>
+                        <h1 style={ { fontSize : '1.5rem', margin : '0 0 0 1rem' } }>Musicommerce</h1>
                     </div>
-                    <div className="navbar__categories">
+                    <div className="navbar__menu">
                         <ul style={ { listStyle : 'none', display : "flex", flexWrap : 'wrap' }  }>
                             <li style={ { fontSize : '1rem', margin : '0 0.5rem'} }>
                                 <a href="/">
@@ -66,8 +56,13 @@ const NavBar = () => {
                             </li>
                         </ul>
                     </div>
+                    <div className="navbar__actions">
+                        <div className="navbar__actions-login">
+                            <Button color="inherit"><PersonIcon /></Button>
+                        </div>
+                        <CartWidget />
+                    </div>
                 </div>
-                <Button color="inherit">Login</Button>
             </Toolbar>
         </AppBar>
     )
