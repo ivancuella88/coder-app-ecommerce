@@ -28,7 +28,7 @@ const NavBar = () => {
                         <h1 style={ { fontSize : '1.5rem', margin : '0 0 0 1rem' } }>Musicommerce</h1>
                     </div>
                     <div className="navbar__menu">
-                        <ul style={ { listStyle : 'none', display : "flex", flexWrap : 'wrap' }  }>
+                        <ul style={ { listStyle : 'none', display : "flex", flexWrap : 'wrap', margin : 0}  }>
                             <li style={ { fontSize : '1rem', margin : '0 0.5rem'} }>
                                 <a href="/">
                                     <Typography variant="h6" component="span" sx={{ flexGrow: 1 }}>Guitarras</Typography>

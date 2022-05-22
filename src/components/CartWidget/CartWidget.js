@@ -6,7 +6,7 @@ const CartWidget = () => {
 
     return(
         <>
-            <div class="cart-widget__container">
+            <div className="cart-widget__container">
                 <Button
                     size="large"
                     edge="start"

@@ -1,0 +1,10 @@
+.card-item__add-to-cart-button{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-item__quantity-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
