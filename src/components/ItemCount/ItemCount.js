@@ -52,7 +52,7 @@ const ItemCount = ({defaulQty, stock}) => {
                     <Button onClick={AddToCart} disabled={!stock}>Add to cart</Button>
                     {  
                         (qty > 0 && addedToCart) && (   
-                            <span>{AddedToCartMessage}</span>
+                            <span className="card-item__added-to-cart-message">{AddedToCartMessage}</span>
                         )
                     }
                 </div>
