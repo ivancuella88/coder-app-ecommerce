@@ -1,6 +1,5 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import PersonIcon from '@mui/icons-material/Person';
 import CartWidget from './CartWidget/CartWidget';
@@ -29,30 +28,20 @@ const NavBar = () => {
                     </div>
                     <div className="navbar__menu">
                         <ul style={ { listStyle : 'none', display : "flex", flexWrap : 'wrap', margin : 0}  }>
-                            <li style={ { fontSize : '1rem', margin : '0 0.5rem'} }>
-                                <a href="/">
-                                    <Typography variant="h6" component="span" sx={{ flexGrow: 1 }}>Guitarras</Typography>
-                                </a>
+                            <li>
+                                <a href="/">Guitarras</a>
                             </li>
-                            <li style={ { fontSize : '1rem', margin : '0 0.5rem'} }>
-                                <a href="/">
-                                    <Typography variant="h6" component="span" sx={{ flexGrow: 1 }}>Amplificadores</Typography>
-                                </a>
+                            <li>
+                                <a href="/">Amplificadores</a>
                             </li>
-                            <li style={ { fontSize : '1rem', margin : '0 0.5rem'} }>
-                                <a href="/">
-                                    <Typography variant="h6" component="span" sx={{ flexGrow: 1 }}>Bajos</Typography>
-                                </a>
+                            <li>
+                                <a href="/">Bajos</a>
                             </li>
-                            <li style={ { fontSize : '1rem', margin : '0 0.5rem'} }>
-                                <a href="/">
-                                    <Typography variant="h6" component="span" sx={{ flexGrow: 1 }}>Saxofones</Typography>
-                                </a>
+                            <li>
+                                <a href="/">Saxofones</a>
                             </li>
-                            <li style={ { fontSize : '1rem', margin : '0 0.5rem'} }>
-                                <a href="/">
-                                    <Typography variant="h6" component="span" sx={{ flexGrow: 1 }}>Otros</Typography>
-                                </a>
+                            <li>
+                                <a href="/">Otros</a>
                             </li>
                         </ul>
                     </div>

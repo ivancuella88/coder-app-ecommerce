@@ -6,10 +6,12 @@ function App() {
   return (
     <>
       <div className="App">
-          <header className="App-header">
+          <div className="App-header">
               <NavBar />
-          </header>
-          <ItemListContainer heading={'Bienvenidos a Musicommerce'} />
+          </div>
+          <div className='container'>
+            <ItemListContainer heading={'Productos destacados'} />
+          </div>
       </div>
     </>
   );
