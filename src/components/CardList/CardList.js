@@ -2,7 +2,6 @@ import Card from '../Card/Card';
 
 const CardList = ( { products }) => {
 
-    console.log(products)
     return (
         <>
             <div className="item-list-container__list">

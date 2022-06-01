@@ -12,34 +12,3 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
 }
-
-
-/*
-* Card item
-*/
-.card-item {
-    border: 1px solid #f3f3f3;
-    border-radius: 0.25rem;
-    padding: 1rem;
-    box-shadow: 4px 4px 10px 0px #eeeded;
-}
-
-.card-item img{
-    max-width: 100%;
-    object-fit: contain;
-    height: 100%;
-    width: 100%;
-}
-
-.card-item .card-item__image{
-    padding: 0.5rem;
-    aspect-ratio: 1/1;
-}
-
-.card-item .card-item__price{
-    display: block;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    font-weight: 500;
-}   

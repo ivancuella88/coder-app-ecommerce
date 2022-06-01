@@ -8,10 +8,10 @@ const Products =  [
             long_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus arcu eget diam gravida sagittis quis id odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis elementum odio maximus eleifend iaculis. Morbi aliquet lorem a euismod rutrum. Suspendisse potenti. Vivamus cursus sit amet ligula at porta. Nunc sit amet neque ac ipsum facilisis molestie nec ac lacus. Maecenas eget nulla non elit viverra venenatis ac eget sem. Sed et elit quam. Praesent at maximus tortor, a pellentesque quam. Aliquam erat volutpat. Nam augue velit, faucibus quis sagittis ac, dictum quis turpis. Integer dapibus ante rhoncus eros tristique auctor. Fusce in dolor faucibus, fringilla metus ut, elementum velit. Aenean aliquam urna massa, ac gravida diam rutrum eu. Aenean non magna mollis, porta tellus at, blandit orci.',
             stock: 50,
             categories: [
-                'Guitarras',
-                'Gibson'
+                'guitarras',
+                'gibson'
             ],
-            imageUrl : './images/XYHF72.jpg'
+            imageUrl : '/images/XYHF72.jpg'
         },
         {
             id: 13,
@@ -22,10 +22,10 @@ const Products =  [
             long_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus arcu eget diam gravida sagittis quis id odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis elementum odio maximus eleifend iaculis. Morbi aliquet lorem a euismod rutrum. Suspendisse potenti. Vivamus cursus sit amet ligula at porta. Nunc sit amet neque ac ipsum facilisis molestie nec ac lacus. Maecenas eget nulla non elit viverra venenatis ac eget sem. Sed et elit quam. Praesent at maximus tortor, a pellentesque quam. Aliquam erat volutpat. Nam augue velit, faucibus quis sagittis ac, dictum quis turpis. Integer dapibus ante rhoncus eros tristique auctor. Fusce in dolor faucibus, fringilla metus ut, elementum velit. Aenean aliquam urna massa, ac gravida diam rutrum eu. Aenean non magna mollis, porta tellus at, blandit orci.',
             stock: 4,
             categories: [
-                'Amplificador',
-                'Fender'
+                'amplificadores',
+                'fender'
             ],
-            imageUrl : './images/XYHF74.jpg'
+            imageUrl : '/images/XYHF74.jpg'
         },
         {
             id: 213,
@@ -36,10 +36,10 @@ const Products =  [
             long_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus arcu eget diam gravida sagittis quis id odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis elementum odio maximus eleifend iaculis. Morbi aliquet lorem a euismod rutrum. Suspendisse potenti. Vivamus cursus sit amet ligula at porta. Nunc sit amet neque ac ipsum facilisis molestie nec ac lacus. Maecenas eget nulla non elit viverra venenatis ac eget sem. Sed et elit quam. Praesent at maximus tortor, a pellentesque quam. Aliquam erat volutpat. Nam augue velit, faucibus quis sagittis ac, dictum quis turpis. Integer dapibus ante rhoncus eros tristique auctor. Fusce in dolor faucibus, fringilla metus ut, elementum velit. Aenean aliquam urna massa, ac gravida diam rutrum eu. Aenean non magna mollis, porta tellus at, blandit orci.',
             stock: 50,
             categories: [
-                'Bajos',
-                '5 cuerdas'
+                'bajos',
+                '5-cuerdas'
             ],
-            imageUrl : './images/XYHF76.jpg'
+            imageUrl : '/images/XYHF76.jpg'
         },
         {
             id: 213,
@@ -50,10 +50,10 @@ const Products =  [
             long_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut luctus arcu eget diam gravida sagittis quis id odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis elementum odio maximus eleifend iaculis. Morbi aliquet lorem a euismod rutrum. Suspendisse potenti. Vivamus cursus sit amet ligula at porta. Nunc sit amet neque ac ipsum facilisis molestie nec ac lacus. Maecenas eget nulla non elit viverra venenatis ac eget sem. Sed et elit quam. Praesent at maximus tortor, a pellentesque quam. Aliquam erat volutpat. Nam augue velit, faucibus quis sagittis ac, dictum quis turpis. Integer dapibus ante rhoncus eros tristique auctor. Fusce in dolor faucibus, fringilla metus ut, elementum velit. Aenean aliquam urna massa, ac gravida diam rutrum eu. Aenean non magna mollis, porta tellus at, blandit orci.',
             stock: 14,
             categories: [
-                'Guitarras',
-                'Les Paul'
+                'guitarras',
+                'les-paul'
             ],
-            imageUrl : './images/XYHF78.jpg'
+            imageUrl : '/images/XYHF78.jpg'
         }
     ]
 

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import CardList from '../CardList/CardList';
-import ProductDetailContainer from '../ProductDetailContainer/ProductDetailContainer';
+import CardList from '../CardList/CardList'
 import './ItemListContainer.css';
 import Products from '../../mocks/products';
 
@@ -19,7 +18,6 @@ const ItemListContainer = ({ heading }) => {
     useEffect(() => {
 
         getProducts().then((res) => {
-            console.log(res);
             setProducts(res)
         }).catch((err) => {
             console.log('Error en la consulta');

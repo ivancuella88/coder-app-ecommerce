@@ -1,13 +1,21 @@
+.single-product-container__image{
+    background-color: #fefefe;
+}
+
 .single-product-container__image img{
-    padding: 1rem;
     border: 1px solid #ddd;
     max-width: 100%;
+    height: auto;
+    padding: 1.5rem;
+
+    aspect-ratio: 1/1;
     object-fit: contain;
+    object-position: top;
     display: block;
 }
 
 .single-product-container .single-product-container__info{
-    padding: 0 1.5rem;
+    padding: 0 2rem;
 }
 
 .single-product-container .card-item__price{

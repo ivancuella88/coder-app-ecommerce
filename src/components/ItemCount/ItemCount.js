@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { Button } from "@mui/material";
 import './ItemCount.css'
+import { Link } from "react-router-dom";
 
-const ItemCount = ({defaulQty, stock}) => {
+const ItemCount = ({id, defaulQty, stock}) => {
 
     const [addedToCart, setAddedToCart] = useState(false)
     const [AddedToCartMessage, setAddedToCartMessage] = useState('')
@@ -59,7 +60,9 @@ const ItemCount = ({defaulQty, stock}) => {
             </div>
             <div className="card-item__buttons-container">
                 <Button className="card-item__button card-item__add-to-cart-button" onClick={AddToCart} disabled={!stock}>Agregar al carrito</Button>
-                <Button className="card-item__button card-item__view-product-button" onClick={AddToCart}>Ver</Button>
+                <Link to={`/producto/${id}`}>
+                    <Button className="card-item__button card-item__view-product-button">Ver</Button>
+                </Link>
             </div>
             {  
                 (qty > 0 && addedToCart) && (   

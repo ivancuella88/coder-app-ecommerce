@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import Products from "../../mocks/products";
 import './ProductDetailContainer.css';
+import { useParams } from "react-router-dom";
 
 const ProductDetailContainer = () =>{
 
+    const { id } =  useParams();
     const [product, setProduct] = useState({})
 
     const getProduct = () => {
@@ -12,7 +14,7 @@ const ProductDetailContainer = () =>{
 
             setTimeout(() => {
                 if(Products.length){
-                    resolve(Products[0])
+                    resolve(Products.find((product) => product.id == id ))
                 }
                 else{
                     reject()
@@ -21,6 +23,7 @@ const ProductDetailContainer = () =>{
             }, 2000);
         })
     }
+    
     useEffect(()=> {
         getProduct()
         .then((res) => {
