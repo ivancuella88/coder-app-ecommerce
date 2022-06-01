@@ -1,0 +1,30 @@
+.single-product-container__image img{
+    padding: 1rem;
+    border: 1px solid #ddd;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.single-product-container .single-product-container__info{
+    padding: 0 1.5rem;
+}
+
+.single-product-container .card-item__price{
+    font-size: 2rem;
+    font-weight: 600;
+    display: block;
+    padding: 1rem 0;
+}
+
+.single-product-container .card-item__quantity-button{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.single-product-container .card-item__buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

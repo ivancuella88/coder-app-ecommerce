@@ -56,16 +56,16 @@ const ItemCount = ({defaulQty, stock}) => {
                         </svg>
                     </Button>
                 </div>
-                <div className="card-item__buttons-container">
-                    <Button className="card-item__button card-item__add-to-cart-button" onClick={AddToCart} disabled={!stock}>Agregar al carrito</Button>
-                    <Button className="card-item__button card-item__view-product-button" onClick={AddToCart}>Ver</Button>
-                </div>
-                {  
-                    (qty > 0 && addedToCart) && (   
-                        <span className="card-item__added-to-cart-message">{AddedToCartMessage}</span>
-                    )
-                }
             </div>
+            <div className="card-item__buttons-container">
+                <Button className="card-item__button card-item__add-to-cart-button" onClick={AddToCart} disabled={!stock}>Agregar al carrito</Button>
+                <Button className="card-item__button card-item__view-product-button" onClick={AddToCart}>Ver</Button>
+            </div>
+            {  
+                (qty > 0 && addedToCart) && (   
+                    <span className="card-item__added-to-cart-message">{AddedToCartMessage}</span>
+                )
+            }
         </>
     )
 }

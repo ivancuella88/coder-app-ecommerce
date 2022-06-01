@@ -7,8 +7,8 @@ const CardList = ( { products }) => {
         <>
             <div className="item-list-container__list">
             {
-                products.map(( {id, sku, title, description, price, imageUrl }, i) => {
-                    return <Card key={sku} id={id} title={title} description={description} price={price} imageUrl={imageUrl} />
+                products.map(( {id, sku, title, short_description, price, imageUrl }, i) => {
+                    return <Card key={sku} id={id} title={title} short_description={short_description} price={price} imageUrl={imageUrl} />
                 })
             }
             </div>

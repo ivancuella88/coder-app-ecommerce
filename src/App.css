@@ -1,4 +1,7 @@
-
+*, :after, :before {
+  box-sizing: border-box;
+  border: 0 solid;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -51,6 +54,13 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;  
+}
+
+.flex{
+  display: flex;
+}
+.col-1\/2{
+  width: 50%;
 }
 
 @keyframes App-logo-spin {
