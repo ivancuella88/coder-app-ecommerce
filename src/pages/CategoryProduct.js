@@ -1,62 +1,32 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Products from "../mocks/products";
-import CategoryProductContainer from '../components/CategoryProductContainer/CategoryProductContainer';
+import { useParams } from "react-router-dom";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-
+import CategoryNavBar from "../components/NavBar/CategoryNavBar";
+import Categories from "../mocks/categories";
+import { useState, useEffect } from "react";
 const CategoryProduct = () => {
 
-    const { categorySlug } =  useParams();
-    const [products, setProducts] = useState([])
+    const { categorySlug }= useParams();
+    
+    const [heading, setHeading] = useState()
+    
+    const getProductCategories = () => {
+        
+        if(categorySlug){
+            let headingText = Categories.find((elem) => elem.slug == categorySlug)
+            if(headingText){
+                setHeading(headingText.name)
+            }
+        }
+    }
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-
-                let items = []
-                items = Products
-                if(categorySlug){
-                    items = Products.filter(
-                        item => item.categories.find((attr => attr == categorySlug))
-                    )
-                    console.log(items)
-                }
-                resolve(items);
-            }, 2000);
-        });
-    };
-
-    useEffect(() => {
-
-        getProducts().then((res) => {
-            setProducts(res)
-        }).catch((err) => {
-            console.log('Error en la consulta');
-        })
-
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    useEffect( ()=>{
+        getProductCategories()
+    }, [categorySlug])
 
     return (
         <>
-            <ul style={ { listStyle : 'none', display : "flex", flexWrap : 'wrap', margin : 0}  }>
-                <li>
-                    <Link to="/categorias">Todas</Link>
-                </li>
-                <li>
-                    <Link to="/categoria/guitarras">Guitarras</Link>
-                </li>
-                <li>
-                    <Link to="/categoria/bajos">Bajos</Link>
-                </li>
-                <li>
-                    <Link to="/categoria/saxofones">Saxofones</Link>
-                </li>
-                <li>
-                    <Link to="/categoria/otros">Otros</Link>
-                </li>
-            </ul>
-            {/* <CategoryProductContainer heading={categorySlug} products={products} /> */}
-            <ItemListContainer products={products} heading={categorySlug} />
+            <CategoryNavBar />
+            <ItemListContainer heading={ heading } />
         </>
     )
 }

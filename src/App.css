@@ -11,6 +11,7 @@
 
 a{
   text-decoration: none;
+  display: block;
 }
 
 .App{
@@ -74,10 +75,24 @@ justify-content: space-between;
 /*
 * Page content
 */
-.page-content{
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+.page-content .main-content{
     padding: 1.5rem 0;
 }
 
+.heading{
+  margin: 0;
+  padding: 1rem 0;
+  text-decoration: underline;
+  text-align: center;
+}
 /*
 * navbar actions
 */
@@ -86,6 +101,51 @@ justify-content: space-between;
   justify-content: flex-end;
   align-items: center;  
 }
+
+/*
+* Footer
+*/
+
+.App-footer {
+  background-color: #353535;
+}
+
+.footer__container{
+  padding: 0.5rem;
+}
+
+.footer__container-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__container-menu a {
+  color: #fefefe;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.footer__container-text{
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fefefe;
+  font-size: 0.875rem;
+}
+
+.footer__container-text a{
+  display: inline;
+  color: #fefefe;
+}
+.footer__container p{
+  margin: 0;
+}
+
+/*
+* Core
+*/
 
 .flex{
   display: flex;
@@ -100,6 +160,68 @@ justify-content: space-between;
 
 .col-7\/12{
   width: 60%;
+}
+
+.category-links{
+  background-color: #353535;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.category-links a {
+  color: #fefefe;
+  padding: 1rem;
+  border-bottom: 4px solid #353535;
+}
+
+.category-links a.current-link {
+  border-color: #e74b0a;
+}
+
+/*
+* Loading
+*/
+
+.loading__container{
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.loading__container .MuiCircularProgress-root{
+   color: #e74b0a;
+}
+
+.not-found__container{
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+/*
+* NotProductsFound 
+*/
+
+.not-product-found__container {
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+/*
+* NotAvailable
+*/
+.not-available__container-content{
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

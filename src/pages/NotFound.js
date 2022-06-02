@@ -1,8 +1,10 @@
 const NotFound = () => {
     return (
         <>
-            <div className="">
-                404 - No se encontró la página
+            <div className="main-content container">
+                <div className="not-found__container">
+                    404 - No se encontró la página
+                </div>
             </div>
         </>
     )

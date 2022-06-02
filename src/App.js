@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import AboutUs from './pages/AboutUs';
@@ -17,7 +18,7 @@ function App() {
               <div className="App-header">
                   <NavBar />
               </div>
-              <div className='page-content container'>
+              <div className='page-content'>
                 <Routes>
                   <Route exact path="/"  element={ <Home /> } />
                   <Route exact path="/tienda" element={ <Shop /> } />
@@ -28,6 +29,9 @@ function App() {
                   <Route exact path="/contacto" element={ <Contact /> } />
                   <Route exact path="*" element={ <NotFound /> } />
                 </Routes>
+              </div>
+              <div className="App-footer">
+                  <Footer />
               </div>
           </BrowserRouter>
       </div>

@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import CategoryNavBar from "../NavBar/CategoryNavBar";
 import Products from "../../mocks/products";
-import './ProductDetailContainer.css';
+import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom";
+import NotProductFound from "../NotFound/NotProductFound";
+import './ProductDetailContainer.css';
 
 const ProductDetailContainer = () =>{
 
-    const { id } =  useParams();
+    const { id }                =  useParams();
     const [product, setProduct] = useState({})
+    const [loading, setLoading] = useState(false)
 
     const getProduct = () => {
         return new Promise((resolve, reject) => {
@@ -25,10 +29,11 @@ const ProductDetailContainer = () =>{
     }
     
     useEffect(()=> {
+        setLoading(true)
         getProduct()
         .then((res) => {
             setProduct(res)
-            console.log(res)
+            setLoading(false)
         })
         .catch((err) => {
             console.log('No se encontró el producto')
@@ -37,7 +42,22 @@ const ProductDetailContainer = () =>{
     
     return (
         <>
-            <ProductDetail product={product} />
+            <CategoryNavBar />
+            {
+                loading
+                ?
+                <div className='loading__container'>
+                    <CircularProgress />
+                </div>
+                :
+                    (product)
+                    ? 
+                    <div className="main-content container">
+                        <ProductDetail product={product} />
+                    </div>
+                    : 
+                    <NotProductFound />
+            }
         </>
     )
 }

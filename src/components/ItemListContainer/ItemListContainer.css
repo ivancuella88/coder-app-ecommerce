@@ -1,6 +1,7 @@
 .item-list-container{
     padding: 1rem 0;
     margin: 0 auto;
+    min-height: 50vh;
 }
 
 .item-list-container h1{

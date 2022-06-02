@@ -42,7 +42,7 @@ const Products =  [
             imageUrl : '/images/XYHF76.jpg'
         },
         {
-            id: 213,
+            id: 350,
             sku: 'XYHF78',
             price : 120000,
             title: 'Guitarra Electrica Les Paul',
@@ -54,6 +54,21 @@ const Products =  [
                 'les-paul'
             ],
             imageUrl : '/images/XYHF78.jpg'
+        },
+        {
+            id: 679,
+            sku: 'XYHF178',
+            price : 455000,
+            title: 'Saxo Tenor Yamaha Yts-26',
+            short_description: 'El Custom EX representa una respuesta a la búsqueda de Yamaha del sonido de saxofón ideal y es el resultado de décadas de minuciosa investigación y pruebas con algunos de los mejores saxofonistas del mundo',
+            long_description: 'El Custom EX representa una respuesta a la búsqueda de Yamaha del sonido de saxofón ideal y es el resultado de décadas de minuciosa investigación y pruebas con algunos de los mejores saxofonistas del mundo. Diseñados pensando en el saxofonista clásico, los saxofones EX ofrecen una respuesta de tecla suave, soplan cómodamente y brindan un sonido profundo y refinado rico en color. El EX también proporciona una gran flexibilidad con un amplio rango dinámico y una proyección impresionante que llena la sala con un tono autoritario.',
+            stock: 14,
+            categories: [
+                'saxofones',
+                'yamaha',
+                'saxo-tenor',
+            ],
+            imageUrl : '/images/XYHF178.png'
         }
     ]
 

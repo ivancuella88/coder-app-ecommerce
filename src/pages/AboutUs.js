@@ -1,7 +1,12 @@
+import NotAvailable from "../components/NotAvailable/NotAvailable";
+
 const AboutUs = () => {
     return (
         <>
-           Nosotros
+            <div className="main-content container">
+                <h1 className="heading">Nosotros</h1>
+                <NotAvailable />
+            </div>
         </>
     )
 }
