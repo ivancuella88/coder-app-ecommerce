@@ -3,6 +3,7 @@ import ItemListContainer from "../components/ItemListContainer/ItemListContainer
 import CategoryNavBar from "../components/NavBar/CategoryNavBar";
 import Categories from "../mocks/categories";
 import { useState, useEffect } from "react";
+
 const CategoryProduct = () => {
 
     const { categorySlug }= useParams();
@@ -11,6 +12,7 @@ const CategoryProduct = () => {
     
     const getProductCategories = () => {
         
+        setHeading('Categorias')
         if(categorySlug){
             let headingText = Categories.find((elem) => elem.slug == categorySlug)
             if(headingText){
@@ -21,7 +23,7 @@ const CategoryProduct = () => {
 
     useEffect( ()=>{
         getProductCategories()
-    }, [categorySlug])
+    }, [categorySlug]);
 
     return (
         <>
