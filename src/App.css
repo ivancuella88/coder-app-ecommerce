@@ -150,6 +150,15 @@ body {
 .flex{
   display: flex;
 }
+
+.justify-center{
+  justify-content: center;
+}
+
+.items-center{
+  align-items: center;
+}
+
 .col-1\/2{
   width: 50%;
 }

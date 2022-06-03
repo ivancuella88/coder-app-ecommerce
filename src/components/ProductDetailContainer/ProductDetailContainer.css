@@ -48,7 +48,7 @@
 .single-product-container .card-item__quantity-button{
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .single-product-container .card-item__buttons-container {
