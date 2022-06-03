@@ -9,11 +9,12 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import SingleProduct from './pages/SingleProduct';
 import CategoryProduct from './pages/CategoryProduct';
-
+import { CartProvider } from './context/CartContext'
 function App() {
   return (
     <>
       <div className="App">
+        <CartProvider>
           <BrowserRouter>
               <div className="App-header">
                   <NavBar />
@@ -34,6 +35,7 @@ function App() {
                   <Footer />
               </div>
           </BrowserRouter>
+        </CartProvider>
       </div>
     </>
   ); 
