@@ -18,7 +18,12 @@ const NavBar = () => {
                             alignItems: 'center'
                         }} >
                         <Link to="/">
-                            <img src='/images/musicomm-logo.png' className="navbar__logo-img" alt="logo" width={120} height={'auto'}/>
+                            <img src='/images/musicomm-logo.png' className="navbar__logo-img" alt="logo" width={100} height={42}/>
+                            <span className='logo__tagline'>
+                                <span>Musicomm</span>
+                                <span>-</span>
+                                <span>Instrumentos musicales</span>
+                            </span>
                         </Link>
                     </div>
                     <div className="navbar__menu">

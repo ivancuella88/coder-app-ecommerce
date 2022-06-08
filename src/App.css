@@ -70,18 +70,39 @@ a{
   border: none;
 }
 
-.navbar__logo{
+
+.navbar__logo a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.navbar__logo img{
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 33.33%;
   overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.navbar__logo .logo__tagline{
+    font-weight: 500;
+    text-align: left;
+    color: #ffffff;
+    font-size: 0.75rem;
+    display: flex;
+    text-align: center;
+}
+
+.navbar__logo .logo__tagline span{
+  margin: 0 0.25rem 0 0;
 }
 
 .App header .navbar__menu a:hover{
   border-color: #aa3411;
 }
-
 
 .App header ul{
   margin: 0;
