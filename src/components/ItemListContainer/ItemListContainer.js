@@ -47,7 +47,7 @@ const ItemListContainer = ({ heading }) => {
     return (
         <>
             <div className="item-list-container container">
-                <h1>{ heading }</h1>
+                <h2 className='page-heading'>{ heading }</h2>
                 {
                     loading
                     ?

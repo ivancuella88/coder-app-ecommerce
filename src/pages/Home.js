@@ -1,9 +1,11 @@
+import Banner from '../components/Banner/Banner';
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 
 const Home = () => {
     return (
         <>
-            <ItemListContainer heading={'Bienvenidos a Musicomm'} />
+            <Banner url={'/images/banner-hot-sale.png'} title={'Hot sale'} />
+            <ItemListContainer heading={'Productos destacados'} />
         </>
     )
 }

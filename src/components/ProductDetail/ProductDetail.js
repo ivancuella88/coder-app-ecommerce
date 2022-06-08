@@ -39,7 +39,7 @@ const ProductDetail = ({product}) =>{
                             }
                         </div>
                     }
-                    <h2>{ title }</h2>
+                    <h1>{ title }</h1>
                     <p>{ long_description }</p>
                     <span className="card-item__price"><span className="card-item__price-simbol">{ price ? '$' : '' }</span> { price ? price.toLocaleString("es-ES") : '' }</span>
                     <ItemCount defaulQty={1} stock={30} isSingleProduct={true} />

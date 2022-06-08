@@ -2,14 +2,9 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-
 import PersonIcon from '@mui/icons-material/Person';
 import CartWidget from './CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
-
-import { useState } from 'react';
 
 const NavBar = () => {
     
