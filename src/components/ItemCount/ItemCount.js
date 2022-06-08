@@ -1,14 +1,21 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import { Button } from "@mui/material";
 import './ItemCount.css'
 import { Link } from "react-router-dom";
 
-const ItemCount = ({id, defaulQty, stock, isSingleProduct}) => {
+import CartContext from "../../context/CartContext";
+
+const ItemCount = ({ product, isSingleProduct }) => {
+
+    const { id, stock } = product
+    
+    const defaulQty = 1
 
     const [addedToCart, setAddedToCart] = useState(false)
     const [AddedToCartMessage, setAddedToCartMessage] = useState('')
     const [qty, setQty] = useState(defaulQty)
-    
+    const { addCartItems } = useContext(CartContext)
+
     const IncrementQty = () => {
         if(stock > qty){
             setQty(qty + 1)
@@ -21,13 +28,21 @@ const ItemCount = ({id, defaulQty, stock, isSingleProduct}) => {
         }
     }
 
-    const AddToCart = () => {
-
-        if(qty && stock){
-            setAddedToCart(true)
-            ShowAddedToCartMessage()
+    const AddToCart = (product) => {
+        
+        let productAdded = {
+            product,
+            qty
         }
         console.log(qty)
+        console.log(stock)
+        console.log(productAdded)
+
+        if(qty && stock){
+            //setAddedToCart(true)
+            addCartItems(productAdded)
+            ShowAddedToCartMessage()
+        }
     }
 
     const ShowAddedToCartMessage = () => {
@@ -63,7 +78,7 @@ const ItemCount = ({id, defaulQty, stock, isSingleProduct}) => {
                             </div>
                         </div>
                         <div className="card-item__buttons-container">
-                            <Button className="card-item__button card-item__add-to-cart-button" onClick={AddToCart} disabled={!stock}>Agregar al carrito</Button>
+                            <Button className="card-item__button card-item__add-to-cart-button" onClick={ () => { AddToCart(product) } } disabled={!stock}>Agregar al carrito</Button>
                             {
                                 !isSingleProduct && 
                                 <Link to={`/producto/${id}`}>

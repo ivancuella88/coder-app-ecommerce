@@ -1,5 +1,5 @@
-import Button from '@mui/material/Button';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+import CartWidgetDrawer from '../CartWidgetDrawer/CartWidgetDrawer';
 import './CartWidget.css';
 
 const CartWidget = () => {
@@ -7,13 +7,7 @@ const CartWidget = () => {
     return(
         <>
             <div className="cart-widget__container">
-                <Button
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    >
-                    <ShoppingCartIcon />
-                </Button>
+                <CartWidgetDrawer />
             </div>
         </>
     )

@@ -2,7 +2,9 @@ import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import './Card.css';
 
-const Card = ({id, title, short_description, price, imageUrl}) => {
+const Card = ({ product }) => {
+
+    const { id, title, short_description, price, imageUrl } = product
     return (
         <>
             <div id={ `card-product-${id}`} className="card-item">
@@ -14,7 +16,7 @@ const Card = ({id, title, short_description, price, imageUrl}) => {
                     <p>{ short_description }</p>
                 </div>
                 <span className="card-item__price"><span className="card-item__price-simbol">{ price ? '$' : '' }</span> { price ? price.toLocaleString("es-ES") : '' }</span>
-                <ItemCount id={id} defaulQty={1} stock={30} />
+                <ItemCount product={product} />
             </div>
         </>
     )
