@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Button } from "@mui/material";
 import './ItemCount.css'
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({id, defaulQty, stock, isSingleProduct}) => {
 
@@ -37,7 +37,7 @@ const ItemCount = ({id, defaulQty, stock, isSingleProduct}) => {
         setTimeout(
             () => {
                 setAddedToCartMessage('')
-            }, 3000
+            }, 4000
         )
     }
 
@@ -74,7 +74,7 @@ const ItemCount = ({id, defaulQty, stock, isSingleProduct}) => {
                     </>
                 )
                 : 
-                    <div className="flex">
+                    <div className="flex flex-col items-start">
                         <Link to={'/carrito'}>
                             <Button className="default-button card-item__button card-item__cart-link">Finalizar mi compra</Button>
                         </Link>    

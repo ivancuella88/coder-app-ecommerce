@@ -16,6 +16,11 @@ function App() {
       <div className="App">
           <BrowserRouter>
               <div className="App-header">
+                  <div className="header__top-bar">
+                    <span>Envios a todo en país</span>
+                    <span>Compra segura</span>
+                    <span>Pagá con tarjeta en cuotas</span>
+                  </div>
                   <NavBar />
               </div>
               <div className='page-content'>

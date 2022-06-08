@@ -9,13 +9,31 @@
   }
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.page-heading{
+    background-color: #fefefe;
+    padding: 1rem;
+    border-bottom: 6px solid #535252;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+body{
+  font-family: 'Monserrat', sans-serif;
+}
+
 a{
   text-decoration: none;
   display: block;
 }
 
 .App{
-  background-color: #f7f7f7;
+  background-color: #FAFAFA;
 }
 .container{
   max-width: 1200px;
@@ -23,28 +41,45 @@ a{
 }
 
 .App header{
-  background-color: #ba3700;
+  background-color: #2e2e2e;
 }
 
 .App header .navbar__menu a{
     color: #fefefe;
     text-decoration: none;
-    font-size: 1.15rem;
+    font-size: 1rem;
     padding: 0.5rem;
-    transition: background-color 0.3s ease-in-out;
+    border-bottom: 3px solid;
+    border-color: transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+.header__top-bar {
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  display: flex;
+}
+
+.header__top-bar span{
+    border-right: 2px solid #2e2e2e;
+    padding: 0.2rem 1rem;
+    font-weight: 600;
+}
+
+.header__top-bar span:last-child{
+  border: none;
 }
 
 .navbar__logo{
   display: flex;
-justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
-  background-color: #fbfbfb;
-  border-radius: 100%;
+  border-radius: 33.33%;
   overflow: hidden;
 }
 
 .App header .navbar__menu a:hover{
-  background-color: #aa3411;
+  border-color: #aa3411;
 }
 
 
@@ -69,7 +104,7 @@ justify-content: space-between;
     justify-content : space-between;
     align-items: center;
     width : 100%;
-    padding : 0.75rem 0;
+    padding : 0.5rem 0;
 }
 
 /*
@@ -111,7 +146,7 @@ body {
 }
 
 .footer__container{
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .footer__container-menu {
@@ -151,12 +186,19 @@ body {
   display: flex;
 }
 
+.flex-col{
+  flex-direction: column;
+}
 .justify-center{
   justify-content: center;
 }
 
 .items-center{
   align-items: center;
+}
+
+.items-start{
+  align-items: flex-start;
 }
 
 .col-1\/2{
@@ -174,16 +216,21 @@ body {
 .category-links{
   background-color: #353535;
   margin: 0;
-  padding: 0;
+  padding: 1rem 0;
   display: flex;
   list-style: none;
   justify-content: center;
 }
 
 .category-links a {
+  transition: border 0.3s ease-in-out;
   color: #fefefe;
-  padding: 1rem;
-  border-bottom: 4px solid #353535;
+  padding: 0.5rem 1rem;
+  border-bottom: 3px solid #353535;
+}
+
+.category-links a:hover{
+  border-color: #e74b0a;
 }
 
 .category-links a.current-link {

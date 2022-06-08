@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
 import CategoryNavBar from "../components/NavBar/CategoryNavBar";
 import Categories from "../mocks/categories";
+import Banner from '../components/Banner/Banner';
 import { useState, useEffect } from "react";
 
 const CategoryProduct = () => {
@@ -28,6 +29,7 @@ const CategoryProduct = () => {
     return (
         <>
             <CategoryNavBar />
+            <Banner url={'/images/banner-hot-sale.png'} title={'Hot sale'} />
             <ItemListContainer heading={ heading } />
         </>
     )
