@@ -7,8 +7,11 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-import CartContext from '../../context/CartContext';
+import ClearIcon from '@mui/icons-material/Clear';
 
+
+import CartContext from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const CartWidgetDrawer = () => {
     
@@ -30,6 +33,7 @@ const CartWidgetDrawer = () => {
     };
 
     useEffect( ()=> {
+        console.log(cartItems)
         setState(addedToCart);
     }, [addedToCart])
 
@@ -40,21 +44,38 @@ const CartWidgetDrawer = () => {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
+            <div class="">Mi carrito</div>
             <Divider />
-            <List>
-                {
-                    cartItems.map(( {product, qty }, i) => (
-                            <ListItem key={i} disablePadding>
-                                <div className='cart-widget-item flex'>
-                                    <div className="cart-widget-item__title">{product.title}</div>
-                                    <div className="cart-widget-item__qty">x {qty}</div>
-                                    <div className="cart-widget-item__price">${product.price}</div>
-                                </div>
-                            </ListItem>
-                        )
+            {
+                cartItems.length
+                ?   (
+                        <List>
+                            {
+                                cartItems.map(( {product, qty }, i) => (
+                                        <ListItem key={i} disablePadding>
+                                            <div className='cart-widget-item w-full flex justify-between'>
+                                                <div className='cart-widget-item__image'>
+                                                    <img src={ `${product.imageUrl}`} width={80} height={80} />
+                                                </div>
+                                                <div className='cart-widget-item__info'>
+                                                    <Link to={`/producto/${product.id}`}>
+                                                        <div className="cart-widget-item__title">{product.title}</div>
+                                                    </Link>
+                                                    <div className="cart-widget-item__qty">Cantidad: {qty}</div>
+                                                    <div className="cart-widget-item__price">${product.price}</div>
+                                                </div>
+                                                <ClearIcon />
+                                            </div>
+                                        </ListItem>
+                                    )
+                                )
+                            }
+                        </List>
                     )
-                }
-            </List>
+                : (
+                    <p>No hay productos en el carrito</p>
+                )
+            }
             <Divider />
             
         </Box>

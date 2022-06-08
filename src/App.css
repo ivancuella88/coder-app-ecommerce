@@ -203,6 +203,9 @@ body {
 * Core
 */
 
+.w-full{
+  width: 100%; 
+}
 .flex{
   display: flex;
 }
@@ -212,6 +215,10 @@ body {
 }
 .justify-center{
   justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
 }
 
 .items-center{
