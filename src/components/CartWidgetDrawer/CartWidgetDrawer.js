@@ -12,6 +12,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ClearIcon from '@mui/icons-material/Clear';
 import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+
 
 const CartWidgetDrawer = () => {
 
@@ -87,6 +89,14 @@ const CartWidgetDrawer = () => {
                             <Divider />
                             <div className='cart-widget__empty-cart-button'>
                                 <Button onClick={emptyCart}>Limpiar carrito <DeleteIcon /></Button>
+                            </div>
+                            <Divider />
+                            <div className='cart-widget__go-to-cart'>
+                                <Link to={'/carrito'}>
+                                    <Button className="default-button card-item__button card-item__cart-link">
+                                        <span>Finalizar compra</span> <DoubleArrowIcon />
+                                    </Button>
+                                </Link>    
                             </div>
                         </>
                     )

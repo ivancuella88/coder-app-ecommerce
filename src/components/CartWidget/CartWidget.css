@@ -38,6 +38,21 @@
     color: #2e2e2e;
 }
 
+.cart-widget__go-to-cart{
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.cart-widget__go-to-cart button{
+    margin: 0 auto;
+}
+
+.cart-widget__go-to-cart button span{
+    display: block;
+    line-height: normal;
+    margin-right: 0.5rem;
+}
+
 .cart-widget__empty button {
     background-color: #ffffff !important;
     border: 1px solid #2e2e2e !important;
