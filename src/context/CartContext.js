@@ -1,22 +1,48 @@
 import { createContext, useState } from "react";
 
-const CartContext = createContext()
-const CartProvider = ({children}) => {
+const CartContext   = createContext()
+const CartProvider  = ({children}) => {
 
-    const [cartItems, setCartItems]     = useState([]);
-    const [addedToCart, setAddedToCart] = useState(false);
+    const [cartItems, setCartItems]         = useState([]);
+    const [addedToCart, setAddedToCart]     = useState(false);
+    const [alreadyInCart, setAlreadyInCart] = useState(false);
 
-    const addCartItems = (product) => {
-        console.log(cartItems)
+    const addCartItem = (product) => {
         setAddedToCart(true)
-        setCartItems(cartItems => [...cartItems, product])
+        setCartItems(cartItems => [...cartItems, product ])
+    }
+
+    const removeCartItem = (id) => {
+        let itemsInCart = [...cartItems]
+        itemsInCart = itemsInCart.filter( (cartItem) => cartItem.product.id != id)
+        setCartItems(itemsInCart)
+    }
+
+    const emptyCart = () => {
+        setCartItems([])
+    }
+
+    const isInCart = (id) => {
+        let isInCart =  cartItems.find( (cartItem) => cartItem.product.id == id)
+        if(isInCart){
+            console.log('isInCart')
+            setAlreadyInCart(true)
+            setTimeout(()=>{
+                setAlreadyInCart(false)
+            }, 2000)
+        }
+        return isInCart
     }
 
     const data = {
         addedToCart,
-        setAddedToCart,
+        alreadyInCart,
         cartItems,
-        addCartItems
+        setAddedToCart,
+        addCartItem,
+        removeCartItem,
+        emptyCart,
+        isInCart
     }
 
     return (

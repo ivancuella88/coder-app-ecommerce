@@ -6,6 +6,9 @@ import NotProductsFound from '../NotFound/NotProductsFound';
 import CircularProgress from '@mui/material/CircularProgress';
 import './ItemListContainer.css';
 
+import { collection, getDocs } from "firebase/firestore";
+import db from '../../utils/firebaseConfig';
+
 const ItemListContainer = ({ heading }) => {
 
     const { categorySlug }              = useParams();
@@ -20,6 +23,12 @@ const ItemListContainer = ({ heading }) => {
         });
     };
 
+    const fbGetProducts = async () => {
+        const q = collection(db, "products");
+        const querySnapshot = await getDocs(q);
+        console.log(querySnapshot)
+    }
+
     const filterProductsByCategory = (products) => {
         if(products.length){
             return products.filter(
@@ -31,6 +40,8 @@ const ItemListContainer = ({ heading }) => {
 
         setLoading(true)
         setProducts([])
+
+        fbGetProducts()
         getProducts().then((res) => {
 
             if(categorySlug){

@@ -32,6 +32,10 @@ a{
   display: block;
 }
 
+button.color-primary{
+    color: #2e2e2e;
+}
+
 .App{
   background-color: #FAFAFA;
 }

@@ -9,6 +9,11 @@
     padding: 1rem;
     box-shadow: 4px 4px 10px 0px #eeeded;
     background-color: #fefefe;
+    transition: background-color 0.2s linear;
+}
+
+.card-item:hover {
+    background-color: #f1f1f1;
 }
 
 .card-item img{
@@ -16,11 +21,18 @@
     object-fit: contain;
     height: 100%;
     width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-item:hover img {
+    transform: scale(1.05);
 }
 
 .card-item .card-item__image{
-    padding: 1rem;
-    aspect-ratio: 1/1;
+    padding: 0.75rem;
+    aspect-ratio: 5/4;
+    background-color: #fefefe;
+    cursor: pointer;
 }
 
 .card-item .card-item__price{
@@ -28,13 +40,13 @@
     text-align: center;
     font-size: 1.5rem;
     padding: 0.5rem;
-    margin: 0.75rem 0;
+    margin: 0.5rem 0;
     font-weight: 500;
 }   
 
 .card-item .card-item__info
 {
-    aspect-ratio: 5/2;
+    aspect-ratio: 3/1;
 }
 .card-item h4{
     font-size: 1rem;
@@ -44,7 +56,7 @@
 .card-item p{
     font-size: 0.85rem;
     line-height: 1.25;
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.5rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -108,7 +120,7 @@ button.default-button{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
 }
 
 .card-item__quantity-button-value {

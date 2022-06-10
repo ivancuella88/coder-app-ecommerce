@@ -14,7 +14,7 @@ const ItemCount = ({ product, isSingleProduct }) => {
     const [addedToCart, setAddedToCart] = useState(false)
     const [AddedToCartMessage, setAddedToCartMessage] = useState('')
     const [qty, setQty] = useState(defaulQty)
-    const { addCartItems } = useContext(CartContext)
+    const { isInCart, addCartItem } = useContext(CartContext)
 
     const IncrementQty = () => {
         if(stock > qty){
@@ -30,18 +30,19 @@ const ItemCount = ({ product, isSingleProduct }) => {
 
     const AddToCart = (product) => {
         
-        let productAdded = {
+        let cartItem = {
             product,
             qty
         }
-        console.log(qty)
-        console.log(stock)
-        console.log(productAdded)
 
-        if(qty && stock){
-            //setAddedToCart(true)
-            addCartItems(productAdded)
-            ShowAddedToCartMessage()
+        let alreadyInCart = isInCart(id)
+
+        if(!alreadyInCart){
+            if(qty && stock){
+                //setAddedToCart(true)
+                addCartItem(cartItem)
+                ShowAddedToCartMessage()
+            }
         }
     }
 
@@ -49,11 +50,11 @@ const ItemCount = ({ product, isSingleProduct }) => {
         let message = 'El producto fue agregado al carrito';
         setAddedToCartMessage(message)
 
-        setTimeout(
-            () => {
-                setAddedToCartMessage('')
-            }, 4000
-        )
+        // setTimeout(
+        //     () => {
+        //         setAddedToCartMessage('')
+        //     }, 4000
+        // )
     }
 
     return (
