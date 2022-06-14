@@ -118,10 +118,14 @@ button.color-primary{
 }
 
 .App-header { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: #fefefe;
 }
 
 .navbar{
@@ -207,6 +211,14 @@ body {
 * Core
 */
 
+.m-0{
+  margin: 0;
+}
+
+.p-0{
+  padding: 0;
+}
+
 .w-full{
   width: 100%; 
 }
@@ -237,6 +249,14 @@ body {
   width: 50%;
 }
 
+.col-3\/12{
+  width: 25%;
+}
+
+.col-9\/12{
+  width: 75%;
+}
+
 .col-5\/12{
   width: 40%;
 }
@@ -244,6 +264,26 @@ body {
 .col-7\/12{
   width: 60%;
 }
+
+.object-contain{
+  object-fit:  contain;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/*
+* Categories
+*/
 
 .category-links{
   background-color: #353535;
@@ -291,6 +331,60 @@ body {
     align-items: center;
     display: flex;
     font-size: 1.5rem;
+}
+
+/*
+* Cart 
+*/
+.cart-table-container{
+    background-color: #fefefe;
+    margin: 2rem 0;
+    box-shadow: 4px 4px 8px 2px #e4e3e3;
+    border-radius: 0.25rem;
+    align-items: stretch;
+}
+
+.cart-table_container-table{
+    padding: 2rem;
+}
+
+.cart-details__container{
+    padding: 2rem;
+    background-color: #3c3c3c;
+    color: #fefefe;
+    height: 100%;
+}
+
+/*
+* Table
+*/
+
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+
+.divTableHeading .divTableCell{
+  font-weight: 600;
+}
+
+.divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 0.5rem;
+  vertical-align: middle;
+	border-bottom: 1px solid #e8e6e6;
+}
+
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
 }
 
 /*

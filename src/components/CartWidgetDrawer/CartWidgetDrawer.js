@@ -19,6 +19,7 @@ const CartWidgetDrawer = () => {
 
     const navigate = useNavigate();
     const { cartItems, addedToCart, setAddedToCart, removeCartItem, emptyCart }    = useContext(CartContext)
+    const [cartCount, setCartCount] = useState(0)
     const [drawerState, setDrawerState] = useState(false);
 
     const toggleDrawer = (drawerState) => (event) => {
@@ -34,14 +35,20 @@ const CartWidgetDrawer = () => {
         setDrawerState(drawerState);
     };
 
-    const goToShop = () => {
+    const goToPage = (pathName) => {
         setDrawerState(false);
-        navigate("/tienda", { replace: true });
+        navigate(pathName, { replace: true });
+    }
+
+    const countCartItems = () =>{
+        let cartCount =  cartItems.reduce( (previousValue, currentValue) => previousValue + currentValue.qty, 0)
+        setCartCount(cartCount)
     }
 
     useEffect( ()=> {
         setDrawerState(addedToCart);
-    }, [addedToCart])
+        countCartItems()
+    }, [addedToCart, cartItems])
 
     const list = () => (
         <Box
@@ -92,18 +99,16 @@ const CartWidgetDrawer = () => {
                             </div>
                             <Divider />
                             <div className='cart-widget__go-to-cart'>
-                                <Link to={'/carrito'}>
-                                    <Button className="default-button card-item__button card-item__cart-link">
-                                        <span>Finalizar compra</span> <DoubleArrowIcon />
-                                    </Button>
-                                </Link>    
+                                <Button onClick={ () => { goToPage('carrito')}} className="default-button card-item__button card-item__cart-link">
+                                    <span>Finalizar compra</span> <DoubleArrowIcon />
+                                </Button>  
                             </div>
                         </>
                     )
                 : (
                     <div className='cart-widget__empty'>
                         <p>No hay productos en el carrito</p>
-                        <Button onClick={goToShop}>Ir a la tienda</Button>
+                        <Button onClick={ () => { goToPage('tienda')}} >Ir a la tienda</Button>
                     </div>
                 )
             }
@@ -116,6 +121,13 @@ const CartWidgetDrawer = () => {
         <>
             <Button onClick={toggleDrawer(true)}>
                 <ShoppingCartIcon />
+                {
+                    cartItems.length
+                    ? (
+                        <span className='cart-widget-count'>{cartCount}</span>
+                    )
+                    : ''
+                }
             </Button>
             <Drawer
                     anchor={'right'}

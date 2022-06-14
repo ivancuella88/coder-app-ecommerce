@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import SingleProduct from './pages/SingleProduct';
 import CategoryProduct from './pages/CategoryProduct';
@@ -31,6 +32,7 @@ function App() {
                   <Route exact path="/producto/:id" element={ <SingleProduct /> } />
                   <Route exact path="/categorias" element={ <CategoryProduct /> } />
                   <Route exact path="/categoria/:categorySlug" element={ <CategoryProduct /> } />
+                  <Route exact path="/carrito" element={ <Cart /> } />
                   <Route exact path="/nosotros" element={ <AboutUs /> } />
                   <Route exact path="/contacto" element={ <Contact /> } />
                   <Route exact path="*" element={ <NotFound /> } />

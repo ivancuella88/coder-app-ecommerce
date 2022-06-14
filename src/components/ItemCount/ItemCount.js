@@ -30,8 +30,12 @@ const ItemCount = ({ product, isSingleProduct }) => {
 
     const AddToCart = (product) => {
         
+
+        let subtotal = product.price * qty
+
         let cartItem = {
             product,
+            subtotal,
             qty
         }
 
@@ -39,7 +43,7 @@ const ItemCount = ({ product, isSingleProduct }) => {
 
         if(!alreadyInCart){
             if(qty && stock){
-                //setAddedToCart(true)
+                setAddedToCart(true)
                 addCartItem(cartItem)
                 ShowAddedToCartMessage()
             }
@@ -50,11 +54,11 @@ const ItemCount = ({ product, isSingleProduct }) => {
         let message = 'El producto fue agregado al carrito';
         setAddedToCartMessage(message)
 
-        // setTimeout(
-        //     () => {
-        //         setAddedToCartMessage('')
-        //     }, 4000
-        // )
+        setTimeout(
+            () => {
+                setAddedToCartMessage('')
+            }, 4000
+        )
     }
 
     return (

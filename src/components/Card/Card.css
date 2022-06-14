@@ -75,19 +75,6 @@ button.default-button{
     font-size: 0.75rem;
 }
 
-.default-button.card-item__cart-link{   
-    padding: 0.5rem 0.75rem;
-    border: 1px solid;
-    font-size: 0.75rem;
-    background-color: #dd480a;
-    color: #fefefe;
-}
-
-.default-button.card-item__cart-link:hover{
-    color: #dd480a;
-    background-color: #fefefe;
-}
-
 .card-item__buttons-container .card-item__button {
     padding: 0.5rem 0.75rem;
     border: 1px solid;
