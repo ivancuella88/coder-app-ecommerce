@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import CategoryNavBar from "../NavBar/CategoryNavBar";
-import Products from "../../mocks/products";
 import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom";
 import NotProductFound from "../NotFound/NotProductFound";
 import './ProductDetailContainer.css';
+
+import { doc, getDoc } from "firebase/firestore";
+import db from '../../utils/firebaseConfig';
 
 const ProductDetailContainer = () =>{
 
@@ -13,19 +15,13 @@ const ProductDetailContainer = () =>{
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(false)
 
-    const getProduct = () => {
-        return new Promise((resolve, reject) => {
+    const getProduct = async () => {
+        const q         = doc(db, "products", id);
+        const queryDoc  = await getDoc(q);
 
-            setTimeout(() => {
-                if(Products.length){
-                    resolve(Products.find((product) => product.id == id ))
-                }
-                else{
-                    reject()
-                    console.log('No se encontró el producto')
-                }
-            }, 2000);
-        })
+        let productDoc  = queryDoc.data()
+        productDoc.id   = queryDoc.id
+        return productDoc
     }
     
     useEffect(()=> {
@@ -38,7 +34,7 @@ const ProductDetailContainer = () =>{
         .catch((err) => {
             console.log('No se encontró el producto')
         })
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [id]) // eslint-disable-line react-hooks/exhaustive-deps
     
     return (
         <>

@@ -26,7 +26,7 @@ const ProductDetail = ({product}) =>{
         <>
             <div id={ `product-${id}` } className="single-product-container flex">
                 <div className="col-5/12 single-product-container__image">
-                    <img src={imageUrl} alt={title} width="600" height="600"/>
+                    <img src={`/images/${imageUrl}`} alt={title} width="600" height="600"/>
                 </div>
                 <div className="col-7/12 single-product-container__info">
                     {

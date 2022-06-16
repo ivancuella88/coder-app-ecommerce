@@ -6,12 +6,13 @@ import './Card.css';
 const Card = ({ product }) => {
 
     const { id, title, short_description, price, imageUrl } = product
+
     return (
         <>
             <div id={ `card-product-${id}`} className="card-item">
                 <Link to={`/producto/${id}`}>
                     <div className="card-item__image">
-                        <img src={imageUrl} alt={title} width="280" height="280"/>
+                        <img src={`/images/${imageUrl}`} alt={title} width="280" height="280"/>
                     </div>
                 </Link>
                 <div className="card-item__info">

@@ -1,11 +1,10 @@
 import { useContext, useEffect } from "react";
 import { Button } from "@mui/material";
-import { useNavigate} from 'react-router-dom';
-import { goToPage } from "../helpers/Helpers";
+import GoToPage from "../../helpers/Helpers";
 
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { useState } from "react";
-import CartContext from "../context/CartContext";
+import CartContext from "../../context/CartContext";
 
 const CartDetails = () => {
 
@@ -13,11 +12,6 @@ const CartDetails = () => {
     const [cartSubTotal, setCartSubTotal] = useState(0)
     const [cartShippingCost, setCartShippingCost] = useState(0)
     const [cartTotal, setCartTotal] = useState(0)
-    
-    const navigate = useNavigate(); 
-    const goToPage = (pathName) => {
-        navigate(pathName, { replace: true });
-    }
 
     useEffect(()=>{
         let subtotal    = cartItems.reduce( (previousValue, currentValue) => previousValue + currentValue.subtotal, 0)
@@ -56,7 +50,7 @@ const CartDetails = () => {
                 </div>
             </div>
             <div className='cart-widget__go-to-checkout'>
-                <Button onClick={ () => { goToPage('finalizar-compra')}} className="default-button card-item__button card-item__cart-link">
+                <Button onClick={ () => { GoToPage('/finalizar-compra')}} className="default-button card-item__button card-item__cart-link">
                     <span>Finalizar compra</span> <DoubleArrowIcon />
                 </Button>  
             </div>

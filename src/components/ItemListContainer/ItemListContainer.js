@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import CardList from '../CardList/CardList'
-import Products from '../../mocks/products';
+import CardList from '../CardList/CardList';
 import NotProductsFound from '../NotFound/NotProductsFound';
 import CircularProgress from '@mui/material/CircularProgress';
 import './ItemListContainer.css';
@@ -15,18 +14,17 @@ const ItemListContainer = ({ heading }) => {
     const [products, setProducts]       = useState([])
     const [loading, setLoading]         = useState(false)
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(Products);
-            }, 2000);
-        });
-    };
-
-    const fbGetProducts = async () => {
-        const q = collection(db, "products");
+    const getProducts = async () => {
+        const q             = collection(db, "products");
         const querySnapshot = await getDocs(q);
-        console.log(querySnapshot)
+        const queryDocs     = querySnapshot.docs.map( (doc) => {
+
+            let data = doc.data()
+            data.id = doc.id
+            return data
+        })
+
+        return queryDocs
     }
 
     const filterProductsByCategory = (products) => {
@@ -41,7 +39,6 @@ const ItemListContainer = ({ heading }) => {
         setLoading(true)
         setProducts([])
 
-        fbGetProducts()
         getProducts().then((res) => {
 
             if(categorySlug){

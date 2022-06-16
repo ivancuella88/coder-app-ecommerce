@@ -1,20 +1,15 @@
-import { useContext, useEffect } from "react"
-import { Link, useNavigate} from 'react-router-dom';
+import { useContext } from "react"
+import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
 
-import CartDetails from "../components/CartDetails";
+import CartDetails from "../components/CartDetails/CartDetails";
 
 import Button from '@mui/material/Button';
 import ClearIcon from '@mui/icons-material/Clear';
 
 const Cart = () => {
 
-    const navigate = useNavigate();
     const { cartItems, removeCartItem } = useContext(CartContext)
-
-    const goToPage = (pathName) => {
-        navigate(pathName, { replace: true });
-    }
 
     return (
         <>
@@ -61,7 +56,7 @@ const Cart = () => {
                                                                     <div key={i} className="divTableRow">
                                                                         <div className="divTableCell text-center">
                                                                             <div className='cart-widget-item__image'>
-                                                                                <img className="object-contain" src={ `${imageUrl}`} width={80} height={80} alt={title}/>
+                                                                                <img className="object-contain" src={ `/images/${imageUrl}`} width={80} height={80} alt={title}/>
                                                                             </div>
                                                                         </div>
                                                                         <div className="divTableCell">

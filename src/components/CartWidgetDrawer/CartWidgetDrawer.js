@@ -75,7 +75,7 @@ const CartWidgetDrawer = () => {
                                         <ListItem key={i} disablePadding>
                                                 <div className='cart-widget-item w-full flex justify-between'>
                                                     <div className='cart-widget-item__image'>
-                                                        <img src={ `${product.imageUrl}`} width={80} height={80} />
+                                                        <img src={ `/images/${product.imageUrl}`} width={80} height={80} alt={product.title} />
                                                     </div>
                                                     <div className='cart-widget-item__info'>
                                                         <Link to={`/producto/${product.id}`}>

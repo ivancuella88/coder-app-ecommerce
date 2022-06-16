@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 
 const CartContext   = createContext()
+
 const CartProvider  = ({children}) => {
 
     const [cartItems, setCartItems]         = useState([]);
@@ -25,7 +26,6 @@ const CartProvider  = ({children}) => {
     const isInCart = (id) => {
         let isInCart =  cartItems.find( (cartItem) => cartItem.product.id == id)
         if(isInCart){
-            console.log('isInCart')
             setAlreadyInCart(true)
             setTimeout(()=>{
                 setAlreadyInCart(false)
