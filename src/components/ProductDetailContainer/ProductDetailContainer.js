@@ -11,7 +11,7 @@ import db from '../../utils/firebaseConfig';
 
 const ProductDetailContainer = () =>{
 
-    const { id }                =  useParams();
+    const { id }                = useParams();
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(false)
 

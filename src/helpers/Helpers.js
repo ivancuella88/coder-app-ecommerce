@@ -5,4 +5,4 @@ const GoToPage = (pathName) => {
     navigate(pathName, { replace: true });
 }
 
-export default { GoToPage }
+export { GoToPage }

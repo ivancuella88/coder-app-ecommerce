@@ -1,25 +1,52 @@
 
 import ItemCount from "../ItemCount/ItemCount";
-import Categories from "../../mocks/categories";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { collection, getDocs } from "firebase/firestore";
+import db from '../../utils/firebaseConfig';
+
 const ProductDetail = ({product}) =>{
     
     const { id, title, long_description, price, imageUrl, categories } = product
     
-    const [productCategories, setProductCategories] = useState([])
-    
-    const getProductCategories = () => {
-        
-        if(categories){
-            setProductCategories(Categories.filter((elem) => 
-               categories.includes(elem.slug)
-            ))
-        }
+    const [productsCategories, setProductsCategories]   = useState([])
+    const [productCategories, setProductCategories]     = useState([])
+
+    const getProductsCategories = async () => {
+        const coleccionCategories   = collection(db, "categories");
+        const docsCategories        = await getDocs(coleccionCategories);
+        const queryCategories       = docsCategories.docs.map( (doc) => {
+            let data = doc.data()
+            data.id = doc.id
+            return data
+        })
+
+        return queryCategories
     }
 
     useEffect( ()=>{
-        getProductCategories()
+
+        if(categories){
+            getProductsCategories()
+            .then(res => {
+                
+                setProductsCategories(res)
+            
+                if(res){
+                    setProductCategories(
+                        res.filter((elem) => {
+                            return categories.includes(elem.slug)
+                        })
+                    )
+                }
+            })
+            .catch((err) => {
+                console.log('Error en la consulta (getProductCategories)');
+            })
+
+        }
+        
     }, [categories])
 
     return (

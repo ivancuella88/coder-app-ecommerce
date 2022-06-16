@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Button } from "@mui/material";
-import GoToPage from "../../helpers/Helpers";
+import { GoToPage } from "../../helpers/Helpers";
 
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { useState } from "react";
