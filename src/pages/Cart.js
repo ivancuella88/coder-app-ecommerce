@@ -1,9 +1,7 @@
 import { useContext } from "react"
 import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
-
 import CartDetails from "../components/CartDetails/CartDetails";
-
 import Button from '@mui/material/Button';
 import ClearIcon from '@mui/icons-material/Clear';
 

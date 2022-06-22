@@ -75,6 +75,12 @@ button.default-button{
     font-size: 0.75rem;
 }
 
+
+button.default-button.default-button__black{
+    color: #2c2c2c;
+    border-color: #2c2c2c;
+}
+
 .card-item__buttons-container .card-item__button {
     padding: 0.5rem 0.75rem;
     border: 1px solid;

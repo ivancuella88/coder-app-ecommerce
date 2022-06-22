@@ -1,0 +1,27 @@
+.checkout-modal {
+    background-color: #fefefe;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.checkout-modal h3{
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #cecece;
+}
+
+.checkout-form .checkout-form__group > div {
+    width: 100%;
+}
+
+.checkout-form .checkout-form__group {
+    margin-bottom: 1.5rem;
+}
+
+.order-complete .order-complete__order-number{
+    background-color: #dbdada;
+    padding: 1rem;
+    font-weight: 600;;
+}
+
+

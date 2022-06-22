@@ -10,7 +10,6 @@ const ProductDetail = ({product}) =>{
     
     const { id, title, long_description, price, imageUrl, categories } = product
     
-    const [productsCategories, setProductsCategories]   = useState([])
     const [productCategories, setProductCategories]     = useState([])
 
     const getProductsCategories = async () => {
@@ -30,8 +29,6 @@ const ProductDetail = ({product}) =>{
         if(categories){
             getProductsCategories()
             .then(res => {
-                
-                setProductsCategories(res)
             
                 if(res){
                     setProductCategories(

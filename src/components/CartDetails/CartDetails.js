@@ -1,23 +1,11 @@
 import { useContext, useEffect } from "react";
-import { Button } from "@mui/material";
-import { GoToPage } from "../../helpers/Helpers";
-
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { useState } from "react";
 import CartContext from "../../context/CartContext";
+import CheckoutModal from "../Checkout/CheckoutModal";
 
 const CartDetails = () => {
 
-    const { cartItems } = useContext(CartContext)
-    const [cartSubTotal, setCartSubTotal] = useState(0)
-    const [cartShippingCost, setCartShippingCost] = useState(0)
-    const [cartTotal, setCartTotal] = useState(0)
-
-    useEffect(()=>{
-        let subtotal    = cartItems.reduce( (previousValue, currentValue) => previousValue + currentValue.subtotal, 0)
-        setCartSubTotal(subtotal)
-        setCartTotal(subtotal + cartShippingCost)
-    }, [cartItems])
+    const { cartItems, cartSubTotal, cartShippingCost, cartTotal } = useContext(CartContext)
 
     return (
         <div className="cart-details">
@@ -50,9 +38,7 @@ const CartDetails = () => {
                 </div>
             </div>
             <div className='cart-widget__go-to-checkout'>
-                <Button onClick={ () => { GoToPage('/finalizar-compra')}} className="default-button card-item__button card-item__cart-link">
-                    <span>Finalizar compra</span> <DoubleArrowIcon />
-                </Button>  
+                <CheckoutModal />
             </div>
         </div>
     )
