@@ -6,11 +6,14 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import MyAccount from './pages/MyAccount';
+import SingleOrder from './pages/SingleOrder';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import SingleProduct from './pages/SingleProduct';
 import CategoryProduct from './pages/CategoryProduct';
 import { CartProvider } from './context/CartContext'
+
 function App() {
   return (
     <>
@@ -32,6 +35,8 @@ function App() {
                   <Route exact path="/producto/:id" element={ <SingleProduct /> } />
                   <Route exact path="/categorias" element={ <CategoryProduct /> } />
                   <Route exact path="/categoria/:categorySlug" element={ <CategoryProduct /> } />
+                  <Route exact path="/mi-cuenta/" element={ <MyAccount /> } />
+                  <Route exact path="/mi-cuenta/pedidos/:orderId" element={ <SingleOrder /> } />
                   <Route exact path="/carrito" element={ <Cart /> } />
                   <Route exact path="/nosotros" element={ <AboutUs /> } />
                   <Route exact path="/contacto" element={ <Contact /> } />

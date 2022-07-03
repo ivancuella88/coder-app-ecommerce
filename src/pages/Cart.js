@@ -17,7 +17,7 @@ const Cart = () => {
                     cartItems.length
                     ?
                     
-                    <div className="flex justify-between items-start cart-table-container">
+                    <div className="flex justify-between items-start table-container cart-table-container">
                         <div className="col-9/12">
                             <div className="divTable cart-table_container-table" >
                                 <div className="divTableBody">

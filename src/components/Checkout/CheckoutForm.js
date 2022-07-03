@@ -9,6 +9,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { addDoc, collection } from 'firebase/firestore';
 import db from '../../utils/firebaseConfig'
 
+import { Validate } from '../../helpers/Helpers'
+
 import './Checkout.css';
 
 const CheckoutForm = () => {
@@ -28,24 +30,29 @@ const CheckoutForm = () => {
 
         e.preventDefault()
 
-        setProcessing(true)
+        let valid = Validate(e)
+        if(valid){
 
-        const buyerOrder = {
-            buyer   : buyer ,
-            items   : cartItems.map((item) => {
-                return {
-                    id : item.product.id,
-                    title : item.product.title,
-                    price : item.product.price,
-                    qty : item.qty
-                }
-            }),
-            date    : new Date().toLocaleString('es-ES'),
-            total   : cartTotal
+            setProcessing(true)
+
+            const buyerOrder = {
+                buyer   : buyer ,
+                items   : cartItems.map((item) => {
+                    return {
+                        id : item.product.id,
+                        title : item.product.title,
+                        price : item.product.price,
+                        qty : item.qty
+                    }
+                }),
+                date    : new Date().toLocaleString('es-ES'),
+                total   : cartTotal
+            }
+
+            setOrder(buyerOrder)
+            saveOrder(buyerOrder)
         }
-
-        setOrder(buyerOrder)
-        saveOrder(buyerOrder)
+        
     }
 
     const saveOrder = async (buyerOrder) => {
@@ -56,6 +63,7 @@ const CheckoutForm = () => {
         setOrderReceived(orderDoc)
         console.log(orderReceived.id)
     }
+
     return (
         <>
             {
@@ -67,7 +75,7 @@ const CheckoutForm = () => {
                         <p>La orden ha sido generada exitosamente.</p>
                         <div className='order-complete__order-number'>Order Nº: {orderReceived.id}</div>
                         <br />
-                        <Link to={`/mi-cuenta/${orderReceived.id}`}>
+                        <Link to={`/mi-cuenta/pedidos/${orderReceived.id}`}>
                             <Button className="default-button default-button__black">Ver en mis pedidos</Button>
                         </Link>
                     </div>
@@ -80,13 +88,13 @@ const CheckoutForm = () => {
                         <>
                             <h3 className='text-center'>Finalizar compra</h3>
                             <form className='checkout-form' onSubmit={submit}>
-                                <div className='checkout-form__group'>
-                                    <TextField size="small" onChange={setInputValue} name="name" label="Nombre" variant="outlined" />
+                                <div className='checkout-form__group input-container'>
+                                    <TextField size="small" onChange={setInputValue} data-rules="required" name="name" label="Nombre" variant="outlined" />
                                 </div>
-                                <div className='checkout-form__group'>
-                                    <TextField size="small" onChange={setInputValue} name="email" label="Email" variant="outlined" />
+                                <div className='checkout-form__group input-container'>
+                                    <TextField size="small" onChange={setInputValue} data-rules="required|email" name="email" label="Email" variant="outlined" />
                                 </div>
-                                <div className='checkout-form__group'>
+                                <div className='checkout-form__group input-container'>
                                     <TextField size="small" onChange={setInputValue} name="phone" label="Teléfono" variant="outlined" />
                                 </div>
                                 <div className="text-center">

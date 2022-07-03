@@ -245,6 +245,10 @@ body {
   align-items: flex-start;
 }
 
+.flex-grow-1{
+  flex-grow: 1;
+}
+
 .col-1\/2{
   width: 50%;
 }
@@ -333,15 +337,22 @@ body {
     font-size: 1.5rem;
 }
 
+
+/*
+* Cart 
+*/
+.table-container{
+  background-color: #fefefe;
+  align-items: stretch;
+}
+
+
 /*
 * Cart 
 */
 .cart-table-container{
-    background-color: #fefefe;
-    margin: 2rem 0;
     box-shadow: 4px 4px 8px 2px #e4e3e3;
-    border-radius: 0.25rem;
-    align-items: stretch;
+    border-radius: 0.25rem
 }
 
 .cart-table_container-table{
@@ -404,6 +415,18 @@ body {
 */
 .not-available__container-content{
   text-align: center;
+}
+
+
+/*
+* Validation messages
+*/
+
+span.error-message {
+  color: #e03a08;
+  font-size: 0.875rem;
+  display: flex;
+  margin-bottom: 0.25rem;
 }
 
 @keyframes App-logo-spin {

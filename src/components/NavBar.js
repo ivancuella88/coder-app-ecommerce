@@ -44,7 +44,9 @@ const NavBar = () => {
                     </div>
                     <div className="navbar__actions">
                         <div className="navbar__actions-login">
-                            <Button color="inherit"><PersonIcon /></Button>
+                            <Link to="/mi-cuenta">
+                                <Button className='text-white' color="inherit"><PersonIcon /></Button>
+                            </Link>
                         </div>
                         <CartWidget />
                     </div>
