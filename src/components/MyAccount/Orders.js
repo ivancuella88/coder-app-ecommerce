@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import db from '../../utils/firebaseConfig';
 import { useState, useEffect } from 'react';
 
@@ -13,7 +13,8 @@ const Orders = () => {
     const [loading, setLoading]     = useState(false)
 
     const getOrders = async () => {
-        const q             = collection(db, "orders");
+
+        const q             =  query(collection(db, "orders"), orderBy('date', 'desc'));
         const querySnapshot = await getDocs(q);
         const queryDocs     = querySnapshot.docs.map( (doc) => {
 
@@ -41,7 +42,7 @@ const Orders = () => {
     return (
         <>
             <div className="">
-                <h2 className="">Mis ordenes</h2>
+                <h2 className="">Mis pedidos</h2>
                 {
                     loading
                     ?

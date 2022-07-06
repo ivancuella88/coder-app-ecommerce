@@ -1,3 +1,5 @@
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import OrderDetail from "../components/Order/OrderDetail";
 
 const AboutUs = () => {
@@ -12,6 +14,11 @@ const AboutUs = () => {
                     <h3 className="text-center">El detalle de tu pedido:</h3>
                 </div>
                 <OrderDetail />
+                <div classs="mt-4 flex justify-center">
+                    <Link to="/tienda" className="text-center">
+                        <Button className="button default-button default-button__black mx-auto">Seguir comprando</Button>
+                    </Link>
+                </div>
             </div>
         </>
     )

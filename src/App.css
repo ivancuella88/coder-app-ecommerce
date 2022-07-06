@@ -248,6 +248,10 @@ body {
   padding: 0;
 }
 
+.p-4{
+  padding: 1rem;
+}
+
 .w-full{
   width: 100%; 
 }
@@ -288,6 +292,10 @@ body {
 
 .col-4\/12{
   width: 33.33%;
+}
+
+.col-6\/12{
+  width: 50%;
 }
 
 .col-8\/12{
@@ -353,6 +361,22 @@ body {
 
 .ml-4{
  margin-left: 1rem;
+}
+
+.mt-1{
+  margin-top: 0.25rem;
+}
+
+.mt-2{
+ margin-top: 0.5rem;
+}
+
+.mt-3{
+ margin-top: 0.75rem;
+}
+
+.mt-4{
+ margin-top: 1rem;
 }
 
 .mb-1{

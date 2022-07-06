@@ -1,4 +1,6 @@
-import AccountDetails from "../components/MyAccount/AccountDetails";
+import '../components/MyAccount/MyAccount.css'
+
+import AccountDetailsContainer from "../components/MyAccount/AccountDetailsContainer";
 import Orders from "../components/MyAccount/Orders";
 
 import Tabs from '@mui/material/Tabs';
@@ -61,7 +63,7 @@ const MyAccount = () => {
                         <Tab label="Mis pedidos" {...a11yProps(1)} />
                     </Tabs>
                     <TabPanel value={value} index={0} className="flex-grow-1">
-                        <AccountDetails />
+                        <AccountDetailsContainer />
                     </TabPanel>
                     <TabPanel value={value} index={1} className="flex-grow-1">
                         <Orders />

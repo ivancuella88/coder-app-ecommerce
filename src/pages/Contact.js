@@ -51,7 +51,7 @@ const Contact = () => {
                 <div className="mx-auto max-w-screen-xs">
                     <div className="w-full mb-4 text-center">
                         <p><strong>Teléfono:</strong> 4535-7968</p>
-                        <p><strong>Whatsapp:</strong> <a href="https://wa.me/1155606590" title="Enviar whatsapp a 15-5560-6590">15-5560-6590</a></p>
+                        <p><strong>Whatsapp:</strong> <a href="https://wa.me/1155606590" target="_blank" title="Enviar whatsapp a 15-5560-6590">15-5560-6590</a></p>
                         <div className="flex justify-center items-center contact__social-icons">
                             <a href="https://www.facebook.com/" className="ml-2 mr-2" title="Facebook" target="_blank">
                                 <img src={`/images/facebook-icon.svg`} alt="Facebook" width="24" height="24"/>

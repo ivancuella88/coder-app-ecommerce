@@ -6,7 +6,7 @@ const ordersList = ( { orders }) => {
 
     return (
         <>  
-            <div className="flex justify-between items-start table-container">  
+            <div className="flex justify-between items-start table-container mt-1">  
                 <div className="divTable order-table_container-table" >
                     <div className="divTableBody">
                         <div className="divTableRow divTableHeading">

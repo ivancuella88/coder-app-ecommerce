@@ -17,8 +17,8 @@ import './Checkout.css';
 
 const CheckoutForm = () => {
 
-    const navigate = useNavigate();
-    const { cartItems, cartTotal } = useContext(CartContext)
+    const navigate  = useNavigate();
+    const { cartItems, cartTotal, emptyCart } = useContext(CartContext)
 
     const [order, setOrder]                 = useState({})
     const [buyer, setBuyer]                 = useState({})
@@ -70,9 +70,10 @@ const CheckoutForm = () => {
         const orderDoc          = await addDoc(firebaseOrders, buyerOrder)
         setProcessing(false)
         setOrderReceived(orderDoc)
-        localStorage.setItem(JSON.stringify(buyer), 'musicomm_session_buyer')
+        localStorage.setItem('musicomm_session_buyer', JSON.stringify(buyer))
 
         if(orderDoc){
+            emptyCart()
             navigate(`/gracias-por-tu-compra/pedido/${orderDoc.id}`)
         }
     }
@@ -108,7 +109,7 @@ const CheckoutForm = () => {
                                     <TextField size="small" onChange={setInputValue} data-rules="required|email" name="email" label="Email" variant="outlined" />
                                 </div>
                                 <div className='checkout-form__group input-container'>
-                                    <TextField size="small" onChange={setInputValue} name="phone" label="Teléfono" variant="outlined" />
+                                    <TextField size="small" onChange={setInputValue} data-rules="required" name="phone" label="Teléfono" variant="outlined" />
                                 </div>
                                 <div className='checkout-form__group input-container'>
                                     <FormControl>
