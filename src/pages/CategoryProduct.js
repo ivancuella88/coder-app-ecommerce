@@ -35,7 +35,7 @@ const CategoryProduct = () => {
             setProductsCategories(res)
         })
         .catch((err) => {
-            console.log('Error en la consulta (getProductCategories)');
+            console.warn('Error en la consulta (getProductCategories)', err);
         })
 
         if(categorySlug){

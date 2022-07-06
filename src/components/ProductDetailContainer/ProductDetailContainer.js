@@ -32,7 +32,7 @@ const ProductDetailContainer = () =>{
             setLoading(false)
         })
         .catch((err) => {
-            console.log('No se encontró el producto')
+            console.warn('No se encontró el producto', err)
         })
     }, [id]) // eslint-disable-line react-hooks/exhaustive-deps
     

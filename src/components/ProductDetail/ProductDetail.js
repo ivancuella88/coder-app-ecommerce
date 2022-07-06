@@ -39,7 +39,7 @@ const ProductDetail = ({product}) =>{
                 }
             })
             .catch((err) => {
-                console.log('Error en la consulta (getProductCategories)');
+                console.warn('Error en la consulta (getProductCategories)', err);
             })
 
         }

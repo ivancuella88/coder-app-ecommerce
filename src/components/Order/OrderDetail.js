@@ -28,13 +28,11 @@ const OrderDetail = () =>{
         .then((res) => {
             setOrder(res)
             setLoading(false)
-            console.log(order.items)
-
         })
         .catch((err) => {
-            console.log('No se encontró el producto')
+            console.warn('No se encontró el producto', err)
         })
-    }, [orderId]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [orderId])
     
     return (
         <>  
@@ -47,17 +45,8 @@ const OrderDetail = () =>{
                 :
                     (order)
                     ?
-                    <div className="main-content container">
-                        <h1 className="heading">Mi cuenta</h1>
-                        <div className="flex mb-4">
-                            <Link to={`/mi-cuenta/`}>
-                                <Button className="color-primary default-button">
-                                    Volver
-                                </Button>
-                            </Link>
-                        </div>
-                        <OrderDetail />
-                        <div id={ `order-${order.id}` } className="single-order-container flex">
+                    <div  id={ `order-${order.id}` } className="order-detail">
+                        <div className="single-order-container flex">
                             <div className="col-4/12 single-order-container__detail">
                                 <div className="mb-2">
                                     <strong>Pedido Nro.:</strong> {order.id}

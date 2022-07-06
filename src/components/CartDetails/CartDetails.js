@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import { useState } from "react";
 import CartContext from "../../context/CartContext";
 import CheckoutModal from "../Checkout/CheckoutModal";
 

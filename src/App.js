@@ -8,6 +8,7 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import MyAccount from './pages/MyAccount';
 import SingleOrder from './pages/SingleOrder';
+import ThankYou from './pages/ThankYou';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import SingleProduct from './pages/SingleProduct';
@@ -38,6 +39,7 @@ function App() {
                   <Route exact path="/mi-cuenta/" element={ <MyAccount /> } />
                   <Route exact path="/mi-cuenta/pedidos/:orderId" element={ <SingleOrder /> } />
                   <Route exact path="/carrito" element={ <Cart /> } />
+                  <Route exact path="/gracias-por-tu-compra/pedido/:orderId" element={ <ThankYou /> } />
                   <Route exact path="/nosotros" element={ <AboutUs /> } />
                   <Route exact path="/contacto" element={ <Contact /> } />
                   <Route exact path="*" element={ <NotFound /> } />

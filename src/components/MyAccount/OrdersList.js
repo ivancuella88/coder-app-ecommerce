@@ -42,7 +42,7 @@ const ordersList = ( { orders }) => {
                                         </div>
                                         <div className="divTableCell text-right">
                                             <Link to={`/mi-cuenta/pedidos/${id}`}>
-                                                <Button className="color-primary">
+                                                <Button className="color-primary default-button">
                                                     Ver pedido
                                                 </Button>
                                             </Link>

@@ -31,19 +31,13 @@ const Orders = () => {
         setOrders([])
 
         getOrders().then((res) => {
-
-            // if(categorySlug){
-            //     res  = filterOrdersByUser(res)
-            // }
-
             setOrders(res)
             setLoading(false)
         }).catch((err) => {
-            console.log('Error en la consulta');
+            console.warn('Error en la consulta', err);
         })
 
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
-
+    }, [])
     return (
         <>
             <div className="">

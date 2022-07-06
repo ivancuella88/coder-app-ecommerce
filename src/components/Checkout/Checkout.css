@@ -26,3 +26,16 @@
 }
 
 
+.checkout-form__group.input-container > div > label{
+    color: #2d2d2d;
+}
+
+.checkout-form__group.input-container div.Mui-focused *{
+    border-color: #2d2d2d;
+}
+
+label .checkout-radio-input, 
+label .checkout-radio-input.Mui-checked{
+    color: #2d2d2d;
+}
+  

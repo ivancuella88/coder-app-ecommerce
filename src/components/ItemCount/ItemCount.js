@@ -94,7 +94,7 @@ const ItemCount = ({ product, isSingleProduct }) => {
                     </>
                 )
                 : 
-                    <div className="flex flex-col items-start">
+                    <div className={'flex flex-col ' + (isSingleProduct ? ' items-start' : 'items-center')}>
                         <Link to={'/carrito'}>
                             <Button className="default-button card-item__button card-item__cart-link">Finalizar mi compra</Button>
                         </Link>    

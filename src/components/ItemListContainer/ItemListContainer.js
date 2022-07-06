@@ -47,7 +47,7 @@ const ItemListContainer = ({ heading }) => {
             setProducts(res)
             setLoading(false)
         }).catch((err) => {
-            console.log('Error en la consulta');
+            console.warn('Error en la consulta');
         })
 
     }, [categorySlug]) // eslint-disable-line react-hooks/exhaustive-deps

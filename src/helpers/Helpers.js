@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useNavigate} from 'react-router-dom';
 
 const GoToPage = (pathName) => {
@@ -18,7 +17,7 @@ const Validate = (form) => {
 
         let validate = inputElements.map((inputElem) => {
 
-            let input = inputElem.querySelector('input, textarea')
+            let input = inputElem.querySelector('input[type=text], input[type=email], input:checked, textarea')
             inputElem.classList.remove("input-invalid");
 
             var rules_classes = []
@@ -40,16 +39,29 @@ const Validate = (form) => {
                 rules.push('email')
             }
 
+            if(rules_classes.includes('checked')){
+                rules.push('checked')
+            }
+
             let results = []
             
             rules.forEach(rule => {
-                console.log(rule, input)
-                let result = validationRules.rules[rule](input.value)
+                
+
+                let result = true
+                if(rule == 'checked'){
+                    result = validationRules.rules[rule](input)
+                }
+                else{
+                    result = validationRules.rules[rule](input.value)
+                }
+
                 if (result !== true) {
                     inputElem.classList.add("input-invalid");
                 }
                 results.push(result)
             });
+
 
             results.forEach(result => {
                 if(result.error){
@@ -87,6 +99,13 @@ const Validate = (form) => {
                     return { error: false, message: ''}
                 } else {
                     return { error: true, message: 'Este campo es requerido'}
+                }
+            },
+            checked : function (field) {
+                if (field && field.checked) {
+                    return { error: false, message: ''}
+                } else {
+                    return { error: true, message: 'Elegí una opción'}
                 }
             },
             email: function (field) {

@@ -100,9 +100,9 @@ const Cart = () => {
                     : (
                         <div className='cart-widget__empty'>
                             <p>No hay productos en el carrito</p>
-                            <Button>
-                                <Link to={'/tienda'}>Ir a la tienda</Link>
-                            </Button>
+                            <Link to={'/tienda'}>
+                                <Button>Ir a la tienda</Button>
+                            </Link>
                         </div>
                     )
                 }

@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import CartContext from "../../context/CartContext";
 import TextField from '@mui/material/TextField';
-import { Button } from '@mui/material';
+import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -15,15 +17,21 @@ import './Checkout.css';
 
 const CheckoutForm = () => {
 
+    const navigate = useNavigate();
     const { cartItems, cartTotal } = useContext(CartContext)
 
     const [order, setOrder]                 = useState({})
     const [buyer, setBuyer]                 = useState({})
     const [processing, setProcessing]       = useState(false)
     const [orderReceived, setOrderReceived] = useState({})
+    const [paymentMethod, setPaymentMethod] = useState()
 
     const setInputValue = (e) => {
         setBuyer({...buyer, [e.target.name] :  e.target.value})
+    }
+
+    const radioPaymentMethod = (e) => {
+        setPaymentMethod(e.target.value)
     }
 
     const submit =  (e) => {
@@ -46,9 +54,10 @@ const CheckoutForm = () => {
                     }
                 }),
                 date    : new Date().toLocaleString('es-ES'),
+                payment_method   : paymentMethod,
                 total   : cartTotal
             }
-
+            
             setOrder(buyerOrder)
             saveOrder(buyerOrder)
         }
@@ -58,10 +67,14 @@ const CheckoutForm = () => {
     const saveOrder = async (buyerOrder) => {
         
         const firebaseOrders    = collection(db, 'orders')
-        const orderDoc     = await addDoc(firebaseOrders, buyerOrder)
+        const orderDoc          = await addDoc(firebaseOrders, buyerOrder)
         setProcessing(false)
         setOrderReceived(orderDoc)
-        console.log(orderReceived.id)
+        localStorage.setItem(JSON.stringify(buyer), 'musicomm_session_buyer')
+
+        if(orderDoc){
+            navigate(`/gracias-por-tu-compra/pedido/${orderDoc.id}`)
+        }
     }
 
     return (
@@ -97,14 +110,31 @@ const CheckoutForm = () => {
                                 <div className='checkout-form__group input-container'>
                                     <TextField size="small" onChange={setInputValue} name="phone" label="Teléfono" variant="outlined" />
                                 </div>
+                                <div className='checkout-form__group input-container'>
+                                    <FormControl>
+                                        <FormLabel id="demo-radio-buttons-group-label">Medios de pago</FormLabel>
+                                            <RadioGroup
+                                                aria-labelledby="demo-radio-buttons-group-label"
+                                                defaultValue=""
+                                                name="payment_method"
+                                                data-rules="checked"
+                                                onChange={radioPaymentMethod}
+                                                >
+                                                <FormControlLabel value="transferencia-bancaria" control={<Radio className="checkout-radio-input" />} label="Transferencia bancaria" />
+                                                <FormControlLabel value="mercado-pago" control={<Radio className="checkout-radio-input" />} label="Mercado pago" />
+                                                <FormControlLabel value="tarjeta-credito" control={<Radio className="checkout-radio-input" />} label="Tarjeta de crédito" />
+                                            </RadioGroup>
+                                        </FormControl>
+                                </div>
                                 <div className="text-center">
-                                    <Button type="submit" className="mx-auto default-button default-button__black">Finalizar</Button>
+                                    <Button type="submit" className="mx-auto default-button default-button__black">Realizar compra</Button>
                                 </div>
                             </form>
                         </>
                     )
                     : (
                         <div className='loading__container'>
+                            <div>Estamos procesando tu pedido...</div>
                             <CircularProgress />
                         </div>
                     )
