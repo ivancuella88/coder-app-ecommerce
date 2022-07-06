@@ -49,26 +49,27 @@ const OrderDetail = () =>{
                     ?
                     <div className="main-content container">
                         <h1 className="heading">Mi cuenta</h1>
-                        <div className="flex">
+                        <div className="flex mb-4">
                             <Link to={`/mi-cuenta/`}>
-                                <Button className="color-primary">
+                                <Button className="color-primary default-button">
                                     Volver
                                 </Button>
                             </Link>
                         </div>
+                        <OrderDetail />
                         <div id={ `order-${order.id}` } className="single-order-container flex">
-                            <div className="col-3/12 single-order-container__image">
-                                <div className="">
-                                    Pedido Nro.: {order.id}
+                            <div className="col-4/12 single-order-container__detail">
+                                <div className="mb-2">
+                                    <strong>Pedido Nro.:</strong> {order.id}
+                                </div>
+                                <div className="mb-2">
+                                    <strong>Fecha:</strong> {order.date}
                                 </div>
                                 <div className="">
-                                    Fecha: {order.date}
-                                </div>
-                                <div className="">
-                                    Total: ${order.total}
+                                    <strong>Total:</strong> ${order.total}
                                 </div>
                             </div>
-                            <div className="col-9/12 single-order-container__info">
+                            <div className="col-8/12 single-order-container__items">
                                 {
                                     order.items 
                                     ?
