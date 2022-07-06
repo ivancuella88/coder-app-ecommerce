@@ -18,7 +18,7 @@ import './Checkout.css';
 const CheckoutForm = () => {
 
     const navigate  = useNavigate();
-    const { cartItems, cartTotal, emptyCart } = useContext(CartContext)
+    const { cartItems, cartTotal, emptyCart, setAddedToCart } = useContext(CartContext)
 
     const [order, setOrder]                 = useState({})
     const [buyer, setBuyer]                 = useState({})
@@ -74,6 +74,7 @@ const CheckoutForm = () => {
 
         if(orderDoc){
             emptyCart()
+            setAddedToCart(false)
             navigate(`/gracias-por-tu-compra/pedido/${orderDoc.id}`)
         }
     }

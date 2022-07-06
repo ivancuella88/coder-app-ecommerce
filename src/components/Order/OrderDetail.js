@@ -21,6 +21,12 @@ const OrderDetail = () =>{
         orderDoc.id   = queryDoc.id
         return orderDoc
     }
+
+    const paymentMethods = {
+        'transferencia-bancaria' : 'Transferencia bancaria',
+        'mercadopago' : 'Transferencia bancaria',
+        'tarjeta-credito' : 'Tarjeta de crédito'
+    }
     
     useEffect(()=> {
         setLoading(true)
@@ -48,13 +54,16 @@ const OrderDetail = () =>{
                     <div  id={ `order-${order.id}` } className="order-detail">
                         <div className="single-order-container flex">
                             <div className="col-4/12 single-order-container__detail">
-                                <div className="mb-2">
+                                <div className="mb-3">
                                     <strong>Pedido Nro.:</strong> {order.id}
                                 </div>
-                                <div className="mb-2">
+                                <div className="mb-3">
                                     <strong>Fecha:</strong> {order.date}
                                 </div>
-                                <div className="">
+                                <div className="mb-3">
+                                    <strong>Metodo de pago:</strong> { paymentMethods[order.payment_method] ? paymentMethods[order.payment_method] : '---'}
+                                </div>
+                                <div className="mb-3">
                                     <strong>Total:</strong> ${order.total}
                                 </div>
                             </div>

@@ -29,8 +29,13 @@ const ItemListContainer = ({ heading }) => {
 
     const filterProductsByCategory = (products) => {
         if(products.length){
+            
             return products.filter(
-                product => product.categories.find((item => item == categorySlug))
+                (product) => {
+                    if(product.categories){
+                        return product.categories.find( (item => item == categorySlug))
+                    }
+                }
             )
         }
     }

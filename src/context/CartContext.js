@@ -7,7 +7,7 @@ const CartProvider  = ({children}) => {
     const [cartItems, setCartItems]         = useState([]);
     const [addedToCart, setAddedToCart]     = useState(false);
     const [alreadyInCart, setAlreadyInCart] = useState(false);
-    const [cartSubTotal, setCartSubTotal]           = useState(0)
+    const [cartSubtotal, setCartSubTotal]           = useState(0)
     const [cartShippingCost, setCartShippingCost]   = useState(0)
     const [cartTotal, setCartTotal]                 = useState(0)
 
@@ -47,6 +47,7 @@ const CartProvider  = ({children}) => {
         addedToCart,
         alreadyInCart,
         cartItems,
+        cartSubtotal,
         cartTotal,
         setAddedToCart,
         addCartItem,

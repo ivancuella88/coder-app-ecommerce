@@ -19,7 +19,7 @@ const Card = ({ product }) => {
                     <h4>{ title }</h4>
                     <p>{ short_description }</p>
                 </div>
-                <span className="card-item__price"><span className="card-item__price-simbol">{ price ? '$' : '' }</span> { price ? price.toLocaleString("es-ES") : '' }</span>
+                <span className="card-item__price"><span className="card-item__price-simbol">{ price ? 'US$' : '' }</span> { price ? price.toLocaleString("es-ES") : '' }</span>
                 <ItemCount product={product} />
             </div>
         </>

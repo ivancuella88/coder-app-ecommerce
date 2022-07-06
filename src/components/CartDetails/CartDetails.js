@@ -4,7 +4,7 @@ import CheckoutModal from "../Checkout/CheckoutModal";
 
 const CartDetails = () => {
 
-    const { cartItems, cartSubTotal, cartShippingCost, cartTotal } = useContext(CartContext)
+    const { cartItems, cartSubtotal, cartShippingCost, cartTotal } = useContext(CartContext)
 
     return (
         <div className="cart-details">
@@ -15,7 +15,7 @@ const CartDetails = () => {
                             <div className="font-semibold">Subtotal</div>
                         </div>
                         <div className="divTableCell text-right">
-                            <div className="">$ {cartSubTotal}</div>
+                            <div className="">US$ {cartSubtotal}</div>
                         </div>
                     </div>
                     <div className="divTableRow cart-details__shipping">
@@ -31,7 +31,7 @@ const CartDetails = () => {
                             <div className="font-semibold">Total</div>
                         </div>
                         <div className="divTableCell text-right">
-                            <div className="">$ {cartTotal}</div>
+                            <div className="">US$ {cartTotal}</div>
                         </div>
                     </div>
                 </div>
